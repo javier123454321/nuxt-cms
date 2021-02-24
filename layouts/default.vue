@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="py-8">
     <Header />
     <ColorModePicker />
     <nuxt />
@@ -23,5 +23,9 @@ body {
 }
 #__layout {
   margin: 0;
+}
+.container {
+  min-height: 100vh;
+  padding-top: 56px; /* header height */
 }
 </style>

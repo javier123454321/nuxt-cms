@@ -32,17 +32,14 @@
         </div>
       </div>
     </section>
-    <section
-      id="about"
-      class="relative min-h-screen -mb-48 pointer-events-none"
-    >
+    <section id="about" class="min-h-screen -my-64">
       <img
         id="brush-splash"
         src="/img/bg-brush-red.png"
-        class="absolute top-0 w-screen"
+        class="absolute right-0 w-11/12 overflow-visible transform -translate-y-48 pointer-events-none"
       />
       <div
-        class="absolute px-32 mt-64 -mb-32 transform translate-y-32 top-16 -rotate-12"
+        class="w-10/12 px-32 mx-auto mt-64 -mb-32 transform translate-y-48 -rotate-12"
       >
         <h2 class="font-mono text-6xl font-black">Hi There,</h2>
         <p class="font-mono text-4xl font-black text-right">
@@ -56,10 +53,15 @@
         </p>
       </div>
     </section>
-    <section id="featured-post" class="-mt-64">
-      <h3 class="my-12 font-mono text-4xl font-black text-left">
-        Featured Post
-      </h3>
+    <section id="featured-post" class="relative -mt-64">
+      <div class="mt-24 mb-12">
+        <h3 class="absolute z-10 mb-0 font-mono text-4xl font-black text-left">
+          <span>Featured Posts</span>
+        </h3>
+        <div
+          class="w-64 h-8 px-4 transform translate-x-4 translate-y-4 bg-blue-400 -rotate-3"
+        ></div>
+      </div>
       <div
         v-for="post in featuredPosts"
         :key="post.slug"

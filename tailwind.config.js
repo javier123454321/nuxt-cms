@@ -22,6 +22,13 @@ module.exports = {
           ...defaultTheme.colors.yellow,
           400: '#FFF974'
         },
+        blue:{
+          ...defaultTheme.colors.blue,
+          400: '#00DBE9'
+        },
+        bg:{
+          light: "#ffffff"
+        },
         primary: {
           100: '#ECEFF5',
           200: '#CBD2E1',
