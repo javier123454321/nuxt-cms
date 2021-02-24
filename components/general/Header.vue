@@ -1,14 +1,26 @@
 <template>
-  <nav class="">
-    <ul class="flex fixed top-0 inset-x-0 p-3">
+  <nav class="sticky flex justify-end w-full font-mono">
+    <ul class="flex justify-end">
       <li class="flex-1 mr-2">
-        <nuxt-link class="btn block" to="/">Home</nuxt-link>
+        <nuxt-link
+          class="px-12 py-4 mr-10 text-xl font-black bg-gray-300 shadow-mdOrange"
+          to="/"
+          >Home</nuxt-link
+        >
       </li>
       <li class="flex-1 mr-2">
-        <nuxt-link class="btn block" to="/blog">Blog</nuxt-link>
+        <nuxt-link
+          class="px-12 py-4 mr-10 text-xl font-black bg-gray-300 shadow-mdOrange hover:bg-yellow-400"
+          to="/blog"
+          >Blog</nuxt-link
+        >
       </li>
       <li class="flex-1">
-        <nuxt-link class="btn block" to="/projects">Projects</nuxt-link>
+        <nuxt-link
+          class="px-12 py-4 text-xl font-black bg-gray-300 shadow-mdOrange"
+          to="/projects"
+          >Projects</nuxt-link
+        >
       </li>
     </ul>
   </nav>
@@ -16,22 +28,22 @@
 
 <script>
 export default {
-  name: 'Header'
-}
+  name: "Header",
+};
 </script>
 
 <style lang="postcss" scoped>
 .nuxt-link-exact-active {
-  @apply text-accent-100 bg-accent bg-opacity-20;
+  @apply text-black bg-yellow-400;
   &:hover {
-    @apply text-white bg-accent-600;
+    @apply text-black bg-yellow-400;
   }
 }
 .light-mode {
   & .nuxt-link-exact-active {
-    @apply text-accent-600;
+    @apply bg-yellow-400;
     &:hover {
-      @apply text-white;
+      @apply bg-yellow-400;
     }
   }
 }

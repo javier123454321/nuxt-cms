@@ -12,9 +12,16 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Karla', ...defaultTheme.fontFamily.sans],
-        mono: [...defaultTheme.fontFamily.mono]
+        mono: ['PT Mono', ...defaultTheme.fontFamily.mono]
+      },
+      translate: {
+        '80': '20rem'
       },
       colors: {
+        yellow: {
+          ...defaultTheme.colors.yellow,
+          400: '#FFF974'
+        },
         primary: {
           100: '#ECEFF5',
           200: '#CBD2E1',
@@ -46,8 +53,9 @@ module.exports = {
       }
     },
     boxShadow: {
-      ...defaultTheme.boxShadow,
-      outline: '0 0 0 3px rgba(0, 86, 87,0.5)'
+      // ...defaultTheme.boxShadow,
+      mdOrange: '5px 5px 0px #EDAB00',
+      lgBlack: '15px 15px 0px #040404;',
     }
   },
   variants: {
