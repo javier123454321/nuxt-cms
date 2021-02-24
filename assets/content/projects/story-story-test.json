@@ -7,5 +7,6 @@
   "body": "Longer **markdown**-*enabled* content text. Does this work?",
   "gallery": [
     "/img/img_1031.jpg"
-  ]
+  ],
+  "cover": "/img/me.png"
 }
