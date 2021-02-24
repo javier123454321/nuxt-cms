@@ -56,6 +56,12 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "Featured",
+          name: "featured",
+          widget: "boolean",
+          default: false,
+        }
   - name: "projects"
     # identifier_field: name
     label: "Projects"
@@ -117,7 +123,7 @@ collections:
         }
   - name: "architecture_projects"
     # identifier_field: name
-    label: "Architecture Projects"
+    label: "Arch"
     label_singular: "Architecture Project"
     folder: "assets/content/projects/arch/"
     create: true

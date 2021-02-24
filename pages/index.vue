@@ -61,18 +61,20 @@
         Featured Post
       </h3>
       <div
+        v-for="post in featuredPosts"
+        :key="post.slug"
         class="flex items-center px-12 py-8 mr-10 text-xl font-black text-left bg-gray-300 dark:bg-yellow-800 shadow-mdOrange"
       >
         <div class="mr-10 bg-green-100 blog__imageContainer"></div>
         <article>
           <div
             class="mb-12 font-mono text-xl font-black"
-            v-html="featuredPost.description"
+            v-html="post.description"
           >
             <br />
           </div>
           <nuxt-link
-            :to="`blog/${featuredPost.slug}`"
+            :to="`blog/${post.slug}`"
             class="box-content px-12 py-4 my-24 font-mono text-xl font-black bg-gray-200 content-border shadow-mdOrange"
             >Full Post</nuxt-link
           >
@@ -119,10 +121,13 @@ export default {
   // },
   mounted() {},
   computed: {
-    featuredPost() {
-      let post = this.$store.state.blogPosts[0];
-      console.log(post);
-      return post;
+    featuredPosts() {
+      let posts = this.$store.state.blogPosts.filter((post) => {
+        console.log(post);
+        return post.featured;
+      });
+      console.log(posts);
+      return posts;
     },
     projectPosts() {
       return this.$store.state.projectPosts;
