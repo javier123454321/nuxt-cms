@@ -63,6 +63,6 @@ export default {
 </script>
 <style lang="postcss" scoped>
 p {
-  @apply mb-10;
+  @apply mb-10 leading-6;
 }
 </style>
