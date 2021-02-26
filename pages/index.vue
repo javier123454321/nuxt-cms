@@ -133,9 +133,6 @@
 
 <script>
 export default {
-  // components: {
-  //   Logo
-  // },
   mounted() {},
   computed: {
     featuredPosts() {

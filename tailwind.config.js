@@ -11,7 +11,7 @@ module.exports = {
     darkSelector: '.dark-mode',
     extend: {
       fontFamily: {
-        sans: ['Karla', ...defaultTheme.fontFamily.sans],
+        sans: ['Prompt', ...defaultTheme.fontFamily.sans],
         mono: ['PT Mono', ...defaultTheme.fontFamily.mono]
       },
       translate: {
@@ -63,6 +63,7 @@ module.exports = {
       // ...defaultTheme.boxShadow,
       mdOrange: '5px 5px 0px #EDAB00',
       lgOrange: '15px 15px 0px #EDAB00',
+      mdBlack: '5px 5px 0px #040404',
       lgBlack: '15px 15px 0px #040404;',
     }
   },
