@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="px-0 md:px-12 lg:px-24 xl:px-48">
+    <section class="px-0 pt-12 md:px-12 lg:px-24 xl:px-48">
       <div id="hero" class="flex items-center justify-between -mb-64">
         <img src="/img/me.png" class="z-10" alt="" srcset="" />
         <div>
@@ -14,17 +14,17 @@
           </div>
           <div class="flex justify-between pl-48 -ml-64 font-mono">
             <button
-              class="px-12 py-4 mr-10 text-xl font-black bg-gray-300 shadow-mdOrange"
+              class="px-12 py-4 mr-10 text-xl font-black bg-gray-300 w-42 shadow-mdOrange"
             >
               Github
             </button>
             <button
-              class="px-12 py-4 mr-10 text-xl font-black bg-gray-300 shadow-mdOrange"
+              class="px-12 py-4 mr-10 text-xl font-black bg-gray-300 w-42 shadow-mdOrange"
             >
               Linkedin
             </button>
             <button
-              class="px-12 py-4 text-xl font-black bg-gray-300 shadow-mdOrange"
+              class="px-12 py-4 text-xl font-black bg-gray-300 w-42 shadow-mdOrange"
             >
               Twitter
             </button>
