@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section>
+    <section class="px-0 md:px-12 lg:px-24 xl:px-48">
       <div id="hero" class="flex items-center justify-between -mb-64">
         <img src="/img/me.png" class="z-10" alt="" srcset="" />
         <div>
@@ -32,15 +32,13 @@
         </div>
       </div>
     </section>
-    <section id="about" class="min-h-screen -my-64">
-      <img
-        id="brush-splash"
-        src="/img/bg-brush-red.png"
-        class="absolute right-0 w-11/12 overflow-visible transform -translate-y-48 pointer-events-none"
-      />
-      <div
-        class="w-10/12 px-32 mx-auto mt-64 -mb-32 transform translate-y-48 -rotate-12"
-      >
+    <img
+      id="brush-splash"
+      src="/img/bg-brush-red.png"
+      class="absolute right-0 w-11/12 overflow-visible transform -translate-y-48 pointer-events-none"
+    />
+    <section id="about" class="px-0 md:px-12 lg:px-24 xl:px-48">
+      <div class="w-10/12 px-32 py-12 mx-auto mt-64 transform -rotate-12">
         <h2 class="font-mono text-6xl font-black">Hi There,</h2>
         <p class="font-mono text-4xl font-black text-right">
           I am an ex architecural desiger turned software developer interested
@@ -53,7 +51,10 @@
         </p>
       </div>
     </section>
-    <section id="featured-post" class="relative -mt-64">
+    <section
+      id="featured-post"
+      class="relative z-10 px-0 md:px-12 lg:px-24 xl:px-48"
+    >
       <div class="mt-24 mb-12">
         <h3 class="absolute z-10 mb-0 font-mono text-4xl font-black text-left">
           <span>Featured Posts</span>
@@ -65,7 +66,7 @@
       <div
         v-for="post in featuredPosts"
         :key="post.slug"
-        class="flex items-center px-12 py-8 mr-10 text-xl font-black text-left bg-gray-300 dark:bg-yellow-800 shadow-mdOrange"
+        class="flex items-center px-12 py-8 mx-2 text-xl font-black text-left bg-gray-300 dark:bg-yellow-800 shadow-lgOrange"
       >
         <div class="mr-10 bg-green-100 blog__imageContainer"></div>
         <article>
@@ -90,9 +91,23 @@
         >
       </div>
     </section>
-    <section id="projects">
-      <h3 class="my-12 font-mono text-4xl font-black text-left">Projects</h3>
-      <div class="flex flex-wrap">
+    <section id="projects" class="px-0 md:px-12 lg:px-24 xl:px-48">
+      <img
+        id="brush-splash"
+        aria-hidden="true"
+        alt=""
+        src="/img/bg-purp-splat.png"
+        class="absolute left-0 z-0 w-7/12 overflow-visible transform -translate-x-48 -translate-y-48 pointer-events-none"
+      />
+      <div class="relative mt-24 mb-12">
+        <h3 class="absolute z-10 mb-0 font-mono text-4xl font-black text-left">
+          <span>My Projects</span>
+        </h3>
+        <div
+          class="w-64 h-8 px-4 transform translate-x-4 translate-y-4 bg-blue-400 -rotate-3"
+        ></div>
+      </div>
+      <div class="relative flex flex-wrap">
         <div
           v-for="(project, index) in projectPosts"
           :key="index"
@@ -154,9 +169,6 @@ export default {
   background-repeat: no-repeat;
   min-height: 80vh;
   overflow: show;
-}
-#brush-splash {
-  pointer-events: nonev;
 }
 .blog__imageContainer {
   width: 30em;
