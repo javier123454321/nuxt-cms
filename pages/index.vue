@@ -1,18 +1,25 @@
 <template>
   <div>
-    <section class="px-0 pt-12 md:px-12 lg:px-24 xl:px-48">
-      <div id="hero" class="flex items-center justify-between -mb-64">
-        <img src="/img/me.png" class="z-10" alt="" srcset="" />
+    <section id="hero" class="z-30 px-0 pt-12 lg:px-24 xl:px-48">
+      <div
+        class="flex flex-col items-center justify-end flex-shrink h-screen lg:flex-row"
+      >
+        <img
+          src="/img/me.png"
+          class="absolute left-0 z-10 mt-24"
+          alt=""
+          srcset=""
+        />
         <div>
           <div
-            class="flex items-center py-8 pl-48 mb-20 -ml-64 text-left bg-yellow-400 dark:bg-yellow-800 shadow-lgBlack"
+            class="flex flex-wrap items-center justify-end py-8 pl-48 pr-12 mb-20 text-left bg-yellow-400 dark:bg-yellow-800 shadow-lgBlack md:order-1 lg:mt-0"
           >
-            <h1 class="font-mono text-6xl font-black">
+            <h1 class="font-mono text-5xl font-black xl:text-6xl">
               Javier Gonzalez <br />
               Software Developer
             </h1>
           </div>
-          <div class="flex justify-between pl-48 -ml-64 font-mono">
+          <div class="z-10 flex justify-end font-mono">
             <button
               class="px-12 py-4 mr-10 text-xl font-black bg-gray-300 w-42 shadow-mdOrange"
             >
@@ -35,7 +42,7 @@
     <img
       id="brush-splash"
       src="/img/bg-brush-red.png"
-      class="absolute right-0 w-11/12 overflow-visible transform -translate-y-48 pointer-events-none"
+      class="absolute right-0 z-0 w-11/12 overflow-visible transform -translate-y-48 pointer-events-none"
     />
     <section id="about" class="px-0 md:px-12 lg:px-24 xl:px-48">
       <div class="w-10/12 px-32 py-12 mx-auto mt-64 transform -rotate-12">

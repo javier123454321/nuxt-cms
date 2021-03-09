@@ -23,7 +23,7 @@
     </div>
     <div
       v-html="$md.render(blogPost.body)"
-      class="p-12 text-left bg-gray-300 shadow-lgOrange"
+      class="p-12 text-left bg-gray-300 shadow-lgOrange markdownArea"
     />
     <div class="flex justify-between mt-8">
       <button
@@ -61,8 +61,8 @@ export default {
   },
 };
 </script>
-<style lang="postcss" scoped>
-p {
+<style lang="postcss">
+.markdownArea > p {
   @apply mb-10 leading-6;
 }
 </style>
