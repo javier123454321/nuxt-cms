@@ -1,20 +1,21 @@
 <template>
   <div>
-    <section id="hero" class="z-30 px-0 pt-12 lg:px-24 xl:px-48">
-      <div
-        class="flex flex-col items-center justify-end flex-shrink h-screen lg:flex-row"
-      >
+    <section
+      id="hero"
+      class="z-30 px-48 py-48 pt-12 mt-48 lg:px-48 xl:px-96 xl:border"
+    >
+      <div class="flex flex-col items-center justify-end lg:flex-row">
         <img
           src="/img/me.png"
-          class="absolute left-0 z-10 mt-24"
+          class="absolute left-0 z-10 ml-24 xl:ml-96 xl:h-800"
           alt=""
           srcset=""
         />
-        <div>
+        <div class="w-full">
           <div
-            class="flex flex-wrap items-center justify-end py-8 pl-48 pr-12 mb-20 text-left bg-yellow-400 dark:bg-yellow-800 shadow-lgBlack md:order-1 lg:mt-0"
+            class="flex flex-wrap items-center justify-end py-8 pr-12 mb-20 text-left bg-yellow-400 w-100 xl:pl-32 w-12/12 dark:bg-yellow-800 shadow-lgBlack md:order-1 lg:mt-0"
           >
-            <h1 class="font-mono text-5xl font-black xl:text-6xl">
+            <h1 class="max-w-xl font-mono text-5xl font-black xl:text-6xl">
               Javier Gonzalez <br />
               Software Developer
             </h1>
@@ -144,10 +145,8 @@ export default {
   computed: {
     featuredPosts() {
       let posts = this.$store.state.blogPosts.filter((post) => {
-        console.log(post);
         return post.featured;
       });
-      console.log(posts);
       return posts;
     },
     projectPosts() {
@@ -178,4 +177,7 @@ export default {
   width: 30em;
   height: 16em;
 }
+/* .h-800 {
+  height: 800px;
+} */
 </style>

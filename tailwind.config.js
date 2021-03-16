@@ -65,7 +65,14 @@ module.exports = {
       lgOrange: '15px 15px 0px #EDAB00',
       mdBlack: '5px 5px 0px #040404',
       lgBlack: '15px 15px 0px #040404;',
-    }
+    },
+      height: {
+        ...defaultTheme.height,
+       200: '200px',
+       400: '400px',
+       600: '600px',
+       800: '800px',
+       }
   },
   variants: {
     backgroundColor: ['dark', 'dark-hover', 'dark-group-hover'],
