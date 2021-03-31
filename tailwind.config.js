@@ -22,6 +22,10 @@ module.exports = {
         sans: ['Prompt', ...defaultTheme.fontFamily.sans],
         mono: ['PT Mono', ...defaultTheme.fontFamily.mono]
       },
+      screens: {
+        'lg+': '1152px',
+        "2xl": '1440px'
+      },
       translate: {
         '80': '20rem'
       },

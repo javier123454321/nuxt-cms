@@ -2,20 +2,20 @@
   <div>
     <section
       id="hero"
-      class="z-30 px-48 py-48 pt-12 mt-48 lg:px-48 xl:px-96 xl:border"
+      class="z-30 py-48 relative pt-12 overflow-visible mt-48 md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
     >
       <div class="flex flex-col items-center justify-end lg:flex-row">
         <img
           src="/img/me.png"
-          class="absolute left-0 z-10 ml-24 xl:ml-96 xl:h-800"
+          class="absolute h-600 ml-24 z-10 transform -translate-x-24 left-0 lg:h-600 lg+:h-800 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
           alt=""
           srcset=""
         />
-        <div class="w-full">
+        <div class="w-full z-0 lg:z-0">
           <div
-            class="flex flex-wrap items-center justify-end py-8 pr-12 mb-20 text-left bg-yellow-400 w-100 xl:pl-32 w-12/12 dark:bg-yellow-800 shadow-lgBlack md:order-1 lg:mt-0"
+            class="flex flex-wrap items-center justify-end py-12 pr-12 mb-20 text-left bg-yellow-400 w-100 xl:pl-40 2xl:pl-32 w-12/12 dark:bg-yellow-800 shadow-lgBlack md:order-1 lg:mt-0"
           >
-            <h1 class="max-w-xl font-mono text-5xl font-black xl:text-6xl">
+            <h1 class="font-mono text-5xl font-black 2xl:text-6xl 2xl:ml-64">
               Javier Gonzalez <br />
               Software Developer
             </h1>
