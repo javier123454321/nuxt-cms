@@ -1,19 +1,19 @@
 <template>
   <div class="py-8">
     <Header />
-    <ColorModePicker />
+    <!-- <ColorModePicker /> -->
     <nuxt />
   </div>
 </template>
 
 <script>
 import Header from "~/components/general/Header.vue";
-import ColorModePicker from "~/components/general/ColorModePicker.vue";
+// import ColorModePicker from "~/components/general/ColorModePicker.vue";
 
 export default {
   components: {
     Header,
-    ColorModePicker,
+    // ColorModePicker,
   },
 };
 </script>

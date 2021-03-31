@@ -5,14 +5,9 @@
   >
     <div class="pt-12 pb-8">
       <div class="mb-12">
-        <h1
-          class="absolute z-10 max-w-screen-md mb-0 font-mono text-6xl font-black text-left"
-        >
-          <span>{{ blogPost.title }}</span>
-        </h1>
-        <div
-          class="h-32 px-4 transform translate-x-4 translate-y-4 bg-blue-400 w-100 -rotate-3"
-        ></div>
+        <highlighted-title headingTag="h1" fontsize="text-6xl">
+          {{ blogPost.title }}
+        </highlighted-title>
       </div>
       <p
         v-if="blogPost.date"
@@ -40,7 +35,9 @@
   </article>
 </template>
 <script>
+import HighlightedTitle from "~/components/HighlightedTitle.vue";
 export default {
+  components: { HighlightedTitle },
   async asyncData({ params, payload }) {
     if (payload) return { blogPost: payload };
     else

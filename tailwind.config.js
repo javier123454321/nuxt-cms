@@ -4,12 +4,20 @@
  ** Docs: https://tailwindcss.com/docs/configuration
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   theme: {
     darkSelector: '.dark-mode',
     extend: {
+      spacing: {
+        ...defaultTheme.spacing,
+        50: '50px',
+        200: '200px',
+        400: '400px',
+        600: '600px',
+        800: '800px',
+      },
       fontFamily: {
         sans: ['Prompt', ...defaultTheme.fontFamily.sans],
         mono: ['PT Mono', ...defaultTheme.fontFamily.mono]
@@ -66,13 +74,6 @@ module.exports = {
       mdBlack: '5px 5px 0px #040404',
       lgBlack: '15px 15px 0px #040404;',
     },
-      height: {
-        ...defaultTheme.height,
-       200: '200px',
-       400: '400px',
-       600: '600px',
-       800: '800px',
-       }
   },
   variants: {
     backgroundColor: ['dark', 'dark-hover', 'dark-group-hover'],
