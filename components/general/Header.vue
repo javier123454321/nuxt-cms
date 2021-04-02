@@ -45,7 +45,7 @@
             </transition>
           </button>
         </li>
-        <div v-show="expanded || isDesktop">
+        <div class="sm:flex" v-show="expanded || isDesktop">
           <li class="flex-1 mr-2">
             <nuxt-link to="/">
               <div
@@ -91,7 +91,7 @@ export default {
   methods: {
     setWindowSize() {
       console.log(document.documentElement.clientWidth);
-      this.isDesktop = document.documentElement.clientWidth > 638;
+      this.isDesktop = window.document.documentElement.clientWidth > 625;
     },
   },
   mounted() {
