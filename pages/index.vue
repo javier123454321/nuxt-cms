@@ -132,11 +132,11 @@
           class="w-64 h-8 px-4 transform translate-x-4 translate-y-4 bg-blue-400 -rotate-3"
         ></div>
       </div>
-      <div class="relative flex flex-wrap">
+      <div class="relative flex flex-wrap justify-between">
         <div
           v-for="(project, index) in projectPosts"
           :key="index"
-          class="items-center w-1/4 px-6 py-4 mx-12 mb-20 text-left bg-yellow-400 dark:bg-yellow-800 shadow-lgBlack"
+          class="items-center justify-between w-1/4 px-6 py-4 mb-20 text-left bg-yellow-400 dark:bg-yellow-800 shadow-lgBlack"
         >
           <div
             class="mb-2 font-mono text-2xl font-black"

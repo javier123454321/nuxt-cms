@@ -11,3 +11,17 @@ body {
   color: var(--text);
   @apply transition-colors duration-200 ease-in-out;
 }
+.nuxt-link-exact-active {
+  @apply text-black bg-yellow-400;
+  &:hover {
+    @apply text-black bg-yellow-400;
+  }
+}
+.light-mode {
+  & .nuxt-link-exact-active {
+    @apply bg-yellow-400;
+    &:hover {
+      @apply bg-yellow-400;
+    }
+  }
+}
