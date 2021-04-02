@@ -1,21 +1,26 @@
 <template>
   <div>
     <section
-      id="hero"
-      class="z-30 py-48 relative pt-12 overflow-visible mt-48 md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
+      class="z-30 relative pt-12 overflow-visible mt-48 md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
     >
-      <div class="flex flex-col items-center justify-end lg:flex-row">
+      <img
+        src="/img/bg-blue-splat.png"
+        class="absolute min-w-1000 z-0 top-0 transform -translate-y-56"
+        alt=""
+      />
+      <div class="flex flex-row items-center justify-end">
         <img
           src="/img/me.png"
-          class="absolute h-600 ml-24 z-10 transform -translate-x-24 left-0 lg:h-600 lg+:h-800 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
-          alt=""
-          srcset=""
+          class="hidden absolute md:block h-600 ml-24 z-10 transform -translate-x-24 left-0 lg:h-600 lg+:h-800 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
+          alt="me with a dog"
         />
-        <div class="w-full z-0 lg:z-0">
+        <div class="w-full z-0">
           <div
             class="flex flex-wrap items-center justify-end py-12 pr-12 mb-20 text-left bg-yellow-400 w-100 xl:pl-40 2xl:pl-32 w-12/12 dark:bg-yellow-800 shadow-lgBlack md:order-1 lg:mt-0"
           >
-            <h1 class="font-mono text-5xl font-black 2xl:text-6xl 2xl:ml-64">
+            <h1
+              class="font-mono text-4xl lg:text-5xl font-black 2xl:text-6xl 2xl:ml-64"
+            >
               Javier Gonzalez <br />
               Software Developer
             </h1>
@@ -43,25 +48,34 @@
     <img
       id="brush-splash"
       src="/img/bg-brush-red.png"
-      class="absolute right-0 z-0 w-11/12 overflow-visible transform -translate-y-48 pointer-events-none"
+      class="absolute right-0 z-0 min-w-1000 md:w-11/12 overflow-visible transform translate-y-10 lg:-translate-y-20 pointer-events-none"
     />
-    <section id="about" class="px-0 md:px-12 lg:px-24 xl:px-48">
-      <div class="w-10/12 px-32 py-12 mx-auto mt-64 transform -rotate-12">
+    <section
+      id="about"
+      class="px-0 mt-24 lg:mt-48 md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
+    >
+      <div
+        class="w-10/12 lg:px-0 py-12 mx-auto mt-0 md:mt-16 relative transform -rotate-12"
+      >
         <h2 class="font-mono text-6xl font-black">Hi There,</h2>
-        <p class="font-mono text-4xl font-black text-right">
+        <p
+          class="font-mono text-2xl md:text-3xl lg:text-4xl font-black text-right"
+        >
           I am an ex architecural desiger turned software developer interested
           in the medium of the web and it’s ability to express old ideas in a
           new way.
         </p>
         <br />
-        <p class="font-mono text-4xl font-black text-right">
+        <p
+          class="font-mono text-2xl md:text-3xl lg:text-4xl font-black text-right"
+        >
           I love learning and making things, both physical and virtual.
         </p>
       </div>
     </section>
     <section
       id="featured-post"
-      class="relative z-10 px-0 md:px-12 lg:px-24 xl:px-48"
+      class="relative z-10 px-0 md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
     >
       <div class="mt-24 mb-12">
         <h3 class="absolute z-10 mb-0 font-mono text-4xl font-black text-left">
@@ -99,7 +113,10 @@
         >
       </div>
     </section>
-    <section id="projects" class="px-0 md:px-12 lg:px-24 xl:px-48">
+    <section
+      id="projects"
+      class="px-0 md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
+    >
       <img
         id="brush-splash"
         aria-hidden="true"
@@ -166,6 +183,8 @@ export default {
 #hero {
   background-image: url("/img/bg-blue-splat.png");
   background-repeat: no-repeat;
+  padding-bottom: 100px;
+  margin-bottom: -100px;
 }
 #aboutContainer {
   background-image: url("/img/bg-brush-red.png");
@@ -177,7 +196,4 @@ export default {
   width: 30em;
   height: 16em;
 }
-/* .h-800 {
-  height: 800px;
-} */
 </style>
