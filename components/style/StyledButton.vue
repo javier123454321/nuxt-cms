@@ -1,8 +1,7 @@
 <template>
   <component
     :is="element"
-    class="md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
-    :class="[classList]"
+    class="px-8 lg:px-12 py-4 text-xl font-black bg-gray-300 md+:w-42 shadow-mdOrange"
   >
       <slot></slot>
   </component>
@@ -10,12 +9,12 @@
 
 <script>
 export default {
-  name: "SectionWidth",
+  name: "StyledButton",
   props: {
 	element: {
       type: String,
-	  default: "section"
-	},
+	    default: "button"
+    },
   }
 };
 </script>

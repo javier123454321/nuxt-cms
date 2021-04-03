@@ -5,9 +5,9 @@
   >
     <div class="pt-12 pb-8">
       <div class="mb-12">
-        <highlighted-title headingTag="h1" fontsize="text-6xl">
+        <StyledHighlightedTitle headingTag="h1" fontsize="text-6xl">
           {{ blogPost.title }}
-        </highlighted-title>
+        </StyledHighlightedTitle>
       </div>
       <p
         v-if="blogPost.date"
@@ -35,9 +35,9 @@
   </article>
 </template>
 <script>
-import HighlightedTitle from "~/components/style/HighlightedTitle.vue";
+import StyledHighlightedTitle from "~/components/style/StyledHighlightedTitle.vue";
 export default {
-  components: { HighlightedTitle },
+  components: { StyledHighlightedTitle },
   async asyncData({ params, payload }) {
     if (payload) return { blogPost: payload };
     else

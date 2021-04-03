@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "HighlightedTitle",
+  name: "StyledHighlightedTitle",
   props: ["headingTag", "fontsize"],
 };
 </script>

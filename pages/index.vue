@@ -1,54 +1,69 @@
 <template>
   <div>
-    <section-width class="z-30 relative pt-12 overflow-visible mt-48">
+    <StyledSectionWidth class="z-30 relative pt-12 overflow-visible mt-48">
+      <div class="overflow-x-hidden min-w-1000 absolute z-0 top-0 transform -translate-y-56">
       <img
         src="/img/bg-blue-splat.png"
-        class="absolute min-w-1000 z-0 top-0 transform -translate-y-56"
+        class="h-800 xl:h-1000 object-cover object-center"
         alt=""
       />
+      </div>
       <div class="flex flex-row items-center justify-end">
         <img
           src="/img/me.png"
-          class="hidden absolute md:block h-600 ml-24 z-10 transform -translate-x-24 left-0 lg:h-600 lg+:h-800 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
+          class="hidden absolute md:block h-600 ml-24 z-10 transform md:-translate-x-32 md:-translate-x-40 md+:-translate-x-24 left-0 lg:h-600 lg+:h-800 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
+          alt="me with a dog"
+        />
+        <img
+          src="/img/Chicago.png"
+          class="absolute h-600 md+:h-800 ml-24 transform -translate-y-24 object-cover object-center "
           alt="me with a dog"
         />
         <div class="w-full z-0">
           <div
-            class="flex flex-wrap items-center justify-end py-12 pr-12 mb-20 text-left bg-yellow-400 w-100 xl:pl-40 2xl:pl-32 w-12/12 dark:bg-yellow-800 shadow-lgBlack md:order-1 lg:mt-0"
+            class="flex flex-wrap items-center justify-center md:justify-end py-12 px-12 mb-5 md:mb-20 bg-yellow-400 xl:pl-40 2xl:pl-32 w-12/12 dark:bg-yellow-800 shadow-lgBlack md:order-1 lg:mt-0"
           >
             <h1
-              class="font-mono text-4xl lg:text-5xl font-black 2xl:text-6xl 2xl:ml-64"
+              class="text-center md:text-left font-mono text-4xl lg:text-5xl font-black 2xl:text-6xl 2xl:ml-64"
             >
               Javier Gonzalez <br />
               Software Developer
             </h1>
           </div>
-          <div class="z-10 flex justify-end font-mono">
-            <a href="https://github.com/javier123454321/"
-              class="px-12 py-4 mr-10 text-xl font-black bg-gray-300 w-42 shadow-mdOrange"
-            >
+          <div class="z-10 flex justify-center md:justify-end font-mono">
+            <StyledButton href="https://github.com/javier123454321/"
+              class="mr-5 md+:mr-10"
+              element="a">
+              <span class="hidden sm:block">
               Github
-            </a>
-            <a href="https://linkedin.com/in/javier123454321"
-              class="px-12 py-4 mr-10 text-xl font-black bg-gray-300 w-42 shadow-mdOrange"
-            >
+              </span>
+              <img alt="github" src="/img/github.svg" class="sm:hidden">
+            </StyledButton>
+            <StyledButton href="https://linkedin.com/in/javier123454321"
+              class="mr-5 md+:mr-10"
+              element="a">
+              <span class="hidden sm:block">
               Linkedin
-            </a>
-            <a href="https://twitter.com/javier123454321"
-              class="px-12 py-4 text-xl font-black bg-gray-300 w-42 shadow-mdOrange"
-            >
+              </span>
+              <img alt="linkedin" src="/img/linkedin.svg" class="sm:hidden">
+            </StyledButton>
+            <StyledButton href="https://twitter.com/javier123454321"
+              element="a">
+              <span class="hidden sm:block">
               Twitter
-            </a>
+              </span>
+              <img alt="twitter" src="/img/twitter.svg" class="sm:hidden">
+            </StyledButton>
           </div>
         </div>
       </div>
-    </section-width>
+    </StyledSectionWidth>
     <img
       id="brush-splash"
       src="/img/bg-brush-red.png"
       class="absolute right-0 z-0 min-w-1000 md:w-11/12 overflow-visible transform translate-y-10 lg:-translate-y-20 pointer-events-none"
     />
-    <section-width
+    <StyledSectionWidth
       id="about"
 	  class="mt-24 lg:mt-48"
     >
@@ -70,8 +85,8 @@
           I love learning and making things, both physical and virtual.
         </p>
       </div>
-    </section-width>
-    <section-width
+    </StyledSectionWidth>
+    <StyledSectionWidth
       id="featured-post"
       class="relative z-10"
     >
@@ -110,8 +125,8 @@
           >All Posts</nuxt-link
         >
       </div>
-    </section-width>
-    <section-width
+    </StyledSectionWidth>
+    <StyledSectionWidth
       id="projects"
     >
       <img
@@ -149,14 +164,15 @@
           </div>
         </div>
       </div>
-    </section-width>
+    </StyledSectionWidth>
   </div>
 </template>
 
 <script>
-import SectionWidth from "~/components/style/SectionWidth.vue"
+import StyledSectionWidth from "~/components/style/StyledSectionWidth.vue"
+import StyledButton from "~/components/style/StyledButton.vue"
 export default {
-  components: { SectionWidth },
+  components: { StyledSectionWidth, StyledButton },
   computed: {
     featuredPosts() {
       let posts = this.$store.state.blogPosts.filter((post) => {

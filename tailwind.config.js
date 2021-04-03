@@ -24,8 +24,9 @@ module.exports = {
         mono: ['PT Mono', ...defaultTheme.fontFamily.mono]
       },
       screens: {
+        'md+': '896px',
         'lg+': '1152px',
-        "2xl": '1440px'
+        '2xl': '1440px'
       },
       translate: {
         '80': '20rem'
