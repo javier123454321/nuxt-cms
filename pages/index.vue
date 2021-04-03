@@ -1,8 +1,6 @@
 <template>
   <div>
-    <section
-      class="z-30 relative pt-12 overflow-visible mt-48 md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
-    >
+    <section-width class="z-30 relative pt-12 overflow-visible mt-48">
       <img
         src="/img/bg-blue-splat.png"
         class="absolute min-w-1000 z-0 top-0 transform -translate-y-56"
@@ -26,33 +24,33 @@
             </h1>
           </div>
           <div class="z-10 flex justify-end font-mono">
-            <button
+            <a href="https://github.com/javier123454321/"
               class="px-12 py-4 mr-10 text-xl font-black bg-gray-300 w-42 shadow-mdOrange"
             >
               Github
-            </button>
-            <button
+            </a>
+            <a href="https://linkedin.com/in/javier123454321"
               class="px-12 py-4 mr-10 text-xl font-black bg-gray-300 w-42 shadow-mdOrange"
             >
               Linkedin
-            </button>
-            <button
+            </a>
+            <a href="https://twitter.com/javier123454321"
               class="px-12 py-4 text-xl font-black bg-gray-300 w-42 shadow-mdOrange"
             >
               Twitter
-            </button>
+            </a>
           </div>
         </div>
       </div>
-    </section>
+    </section-width>
     <img
       id="brush-splash"
       src="/img/bg-brush-red.png"
       class="absolute right-0 z-0 min-w-1000 md:w-11/12 overflow-visible transform translate-y-10 lg:-translate-y-20 pointer-events-none"
     />
-    <section
+    <section-width
       id="about"
-      class="px-0 mt-24 lg:mt-48 md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
+	  class="mt-24 lg:mt-48"
     >
       <div
         class="w-10/12 lg:px-0 py-12 mx-auto mt-0 md:mt-16 relative transform -rotate-12"
@@ -72,10 +70,10 @@
           I love learning and making things, both physical and virtual.
         </p>
       </div>
-    </section>
-    <section
+    </section-width>
+    <section-width
       id="featured-post"
-      class="relative z-10 px-0 md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
+      class="relative z-10"
     >
       <div class="mt-24 mb-12">
         <h3 class="absolute z-10 mb-0 font-mono text-4xl font-black text-left">
@@ -112,10 +110,9 @@
           >All Posts</nuxt-link
         >
       </div>
-    </section>
-    <section
+    </section-width>
+    <section-width
       id="projects"
-      class="px-0 md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
     >
       <img
         id="brush-splash"
@@ -152,13 +149,14 @@
           </div>
         </div>
       </div>
-    </section>
+    </section-width>
   </div>
 </template>
 
 <script>
+import SectionWidth from "~/components/SectionWidth.vue"
 export default {
-  mounted() {},
+  components: { SectionWidth },
   computed: {
     featuredPosts() {
       let posts = this.$store.state.blogPosts.filter((post) => {
