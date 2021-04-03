@@ -35,7 +35,7 @@
   </article>
 </template>
 <script>
-import HighlightedTitle from "~/components/HighlightedTitle.vue";
+import HighlightedTitle from "~/components/style/HighlightedTitle.vue";
 export default {
   components: { HighlightedTitle },
   async asyncData({ params, payload }) {

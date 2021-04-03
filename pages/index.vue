@@ -154,7 +154,7 @@
 </template>
 
 <script>
-import SectionWidth from "~/components/SectionWidth.vue"
+import SectionWidth from "~/components/style/SectionWidth.vue"
 export default {
   components: { SectionWidth },
   computed: {
