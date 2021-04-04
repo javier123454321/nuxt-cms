@@ -1,7 +1,8 @@
 <template>
-  <article
+  <StyledSectionWidth
+    element="article"
     v-if="blogPost"
-    class="container max-w-screen-md py-12 mx-auto main article"
+    class="main article"
   >
     <div class="pt-12 pb-8">
       <div class="mb-12">
@@ -18,7 +19,7 @@
     </div>
     <div
       v-html="$md.render(blogPost.body)"
-      class="p-12 text-left bg-gray-300 shadow-lgOrange markdownArea"
+      class="p-12 text-left bg-gray-200 shadow-lgOrange markdownArea"
     />
     <div class="flex justify-between mt-8">
       <button
@@ -32,12 +33,13 @@
         next >>
       </button>
     </div>
-  </article>
+  </StyledSectionWidth>
 </template>
 <script>
 import StyledHighlightedTitle from "~/components/style/StyledHighlightedTitle.vue";
+import StyledSectionWidth from "~/components/style/StyledSectionWidth.vue";
 export default {
-  components: { StyledHighlightedTitle },
+  components: { StyledHighlightedTitle, StyledSectionWidth },
   async asyncData({ params, payload }) {
     if (payload) return { blogPost: payload };
     else
@@ -58,8 +60,32 @@ export default {
   },
 };
 </script>
-<style lang="postcss">
+<style lang="css">
 .markdownArea > p {
-  @apply mb-10 leading-6;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.markdownArea blockquote {
+  @apply pl-6 py-4 border-l-4 border-solid border-blue-400 bg-blue-200;
+}
+.markdownArea > h2,
+.markdownArea > h3,
+.markdownArea > h4,
+.markdownArea > h5,
+.markdownArea > h6 {
+  @apply font-black mb-4;
+}
+.markdownArea h2 {
+  @apply text-3xl;
+}
+.markdownArea h3 {
+  @apply text-2xl;
+}
+.markdownArea h4 {
+  @apply text-xl;
+}
+.markdownArea h5,
+.markdownArea h6{
+  @apply text-lg;
 }
 </style>
