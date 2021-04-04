@@ -13,8 +13,8 @@
       <div class="flex flex-row items-center justify-center md:justify-end">
         <img
           src="/img/Chicago.png"
-          class="absolute h-600 md:h-800 lg:h-1000 ml-24 transform -translate-y-24 object-cover object-center"
-          alt="me with a dog"
+          class="absolute h-700 md:h-700 lg:h-850 ml-24 transform -translate-y-24 object-cover object-center"
+          alt="me with a "
         />
         <img
           src="/img/me.png"
