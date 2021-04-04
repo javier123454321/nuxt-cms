@@ -4,10 +4,10 @@
       class="fixed sm:top-auto z-50 flex justify-end px-0 md:w-screen font-mono md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
     >
       <ul class="flex flex-col sm:flex-row justify-end">
-        <li class="sm:hidden mr-2">
+        <li class="sm:hidden mr-2 mb-2">
           <button
             @click="expanded = !expanded"
-            class="bg-gray-300 shadow-mdOrange w-40"
+            class="bg-gray-300 shadow-mdOrange w-40 p-1"
           >
             <transition>
               <div v-if="!expanded" class="flex items-center">
@@ -46,7 +46,7 @@
           </button>
         </li>
         <div class="sm:flex" v-show="expanded || isDesktop">
-          <li class="flex-1 mr-2">
+          <li class="flex-1 mr-2 mb-2">
             <nuxt-link to="/">
               <div
                 class="sm:w-40 text-center py-4 md:mr-10 text-xl font-black bg-gray-300 shadow-mdOrange"
@@ -55,7 +55,7 @@
               </div>
             </nuxt-link>
           </li>
-          <li class="flex-1 mr-2">
+          <li class="flex-1 mr-2 mb-2">
             <nuxt-link to="/blog">
               <div
                 class="w-40 text-center py-4 md:mr-10 text-xl font-black bg-gray-300 shadow-mdOrange hover:bg-yellow-400"

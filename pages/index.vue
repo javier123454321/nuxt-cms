@@ -1,22 +1,24 @@
 <template>
   <div>
     <StyledSectionWidth class="z-30 relative pt-12 overflow-visible mt-48">
-      <div class="overflow-x-hidden min-w-1000 absolute z-0 top-0 transform -translate-y-56">
-      <img
-        src="/img/bg-blue-splat.png"
-        class="h-800 xl:h-1000 object-cover object-center"
-        alt=""
-      />
-      </div>
-      <div class="flex flex-row items-center justify-end">
+      <div
+        class="overflow-x-hidden min-w-1000 absolute z-0 top-0 transform -translate-y-56"
+      >
         <img
-          src="/img/me.png"
-          class="hidden absolute md:block h-600 ml-24 z-10 transform md:-translate-x-32 md:-translate-x-40 md+:-translate-x-24 left-0 lg:h-600 lg+:h-800 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
+          src="/img/bg-blue-splat.png"
+          class="h-800 xl:h-1000 object-cover object-center"
+          alt=""
+        />
+      </div>
+      <div class="flex flex-row items-center justify-center md:justify-end">
+        <img
+          src="/img/Chicago.png"
+          class="absolute h-600 md:h-800 lg:h-1000 ml-24 transform -translate-y-24 object-cover object-center"
           alt="me with a dog"
         />
         <img
-          src="/img/Chicago.png"
-          class="absolute h-600 md+:h-800 ml-24 transform -translate-y-24 object-cover object-center "
+          src="/img/me.png"
+          class="absolute md:block h-700 ml-24 md:z-10 transform -translate-x-32 md:-translate-x-40 md+:-translate-x-24 left-0 lg:h-600 lg+:h-800 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
           alt="me with a dog"
         />
         <div class="w-full z-0">
@@ -24,35 +26,37 @@
             class="flex flex-wrap items-center justify-center md:justify-end py-12 px-12 mb-5 md:mb-20 bg-yellow-400 xl:pl-40 2xl:pl-32 w-12/12 dark:bg-yellow-800 shadow-lgBlack md:order-1 lg:mt-0"
           >
             <h1
-              class="text-center md:text-left font-mono text-4xl lg:text-5xl font-black 2xl:text-6xl 2xl:ml-64"
+              class="text-center md:text-left z-20 relative block font-mono text-4xl lg:text-5xl font-black 2xl:text-6xl 2xl:ml-64"
             >
               Javier Gonzalez <br />
-              Software Developer
+              <span class="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl"
+                >Software Developer</span
+              >
             </h1>
           </div>
           <div class="z-10 flex justify-center md:justify-end font-mono">
-            <StyledButton href="https://github.com/javier123454321/"
+            <StyledButton
+              href="https://github.com/javier123454321/"
               class="mr-5 md+:mr-10"
-              element="a">
-              <span class="hidden sm:block">
-              Github
-              </span>
-              <img alt="github" src="/img/github.svg" class="sm:hidden">
+              element="a"
+            >
+              <span class="hidden sm:block"> Github </span>
+              <img alt="github" src="/img/github.svg" class="sm:hidden" />
             </StyledButton>
-            <StyledButton href="https://linkedin.com/in/javier123454321"
+            <StyledButton
+              href="https://linkedin.com/in/javier123454321"
               class="mr-5 md+:mr-10"
-              element="a">
-              <span class="hidden sm:block">
-              Linkedin
-              </span>
-              <img alt="linkedin" src="/img/linkedin.svg" class="sm:hidden">
+              element="a"
+            >
+              <span class="hidden sm:block"> Linkedin </span>
+              <img alt="linkedin" src="/img/linkedin.svg" class="sm:hidden" />
             </StyledButton>
-            <StyledButton href="https://twitter.com/javier123454321"
-              element="a">
-              <span class="hidden sm:block">
-              Twitter
-              </span>
-              <img alt="twitter" src="/img/twitter.svg" class="sm:hidden">
+            <StyledButton
+              href="https://twitter.com/javier123454321"
+              element="a"
+            >
+              <span class="hidden sm:block"> Twitter </span>
+              <img alt="twitter" src="/img/twitter.svg" class="sm:hidden" />
             </StyledButton>
           </div>
         </div>
@@ -63,10 +67,7 @@
       src="/img/bg-brush-red.png"
       class="absolute right-0 z-0 min-w-1000 md:w-11/12 overflow-visible transform translate-y-10 lg:-translate-y-20 pointer-events-none"
     />
-    <StyledSectionWidth
-      id="about"
-	  class="mt-24 lg:mt-48"
-    >
+    <StyledSectionWidth id="about" class="mt-24 lg:mt-48">
       <div
         class="w-10/12 lg:px-0 py-12 mx-auto mt-0 md:mt-16 relative transform -rotate-12"
       >
@@ -86,10 +87,7 @@
         </p>
       </div>
     </StyledSectionWidth>
-    <StyledSectionWidth
-      id="featured-post"
-      class="relative z-10"
-    >
+    <StyledSectionWidth id="featured-post" class="relative z-10">
       <div class="mt-24 mb-12">
         <h3 class="absolute z-10 mb-0 font-mono text-4xl font-black text-left">
           <span>Featured Posts</span>
@@ -126,9 +124,7 @@
         >
       </div>
     </StyledSectionWidth>
-    <StyledSectionWidth
-      id="projects"
-    >
+    <StyledSectionWidth id="projects">
       <img
         id="brush-splash"
         aria-hidden="true"
@@ -169,8 +165,8 @@
 </template>
 
 <script>
-import StyledSectionWidth from "~/components/style/StyledSectionWidth.vue"
-import StyledButton from "~/components/style/StyledButton.vue"
+import StyledSectionWidth from "~/components/style/StyledSectionWidth.vue";
+import StyledButton from "~/components/style/StyledButton.vue";
 export default {
   components: { StyledSectionWidth, StyledButton },
   computed: {
