@@ -60,8 +60,12 @@ module.exports = {
           ...defaultTheme.colors.blue,
           400: '#00DBE9'
         },
+        hotPink: {
+          default: "#ff0074"
+        },
         bg:{
-          light: "#ffffff"
+          light: "#ffffff",
+          dark: "#221c38"
         },
         primary: {
           100: '#ECEFF5',

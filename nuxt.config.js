@@ -1,6 +1,7 @@
 import glob from 'glob'
 import path from 'path'
 import postcssImport from 'postcss-import'
+import hljs from 'highlight.js'
 import postcssNesting from 'postcss-nesting'
 import postcssPresetEnv from 'postcss-preset-env'
 import * as SITE_INFO from './assets/content/site/info.json'
@@ -61,7 +62,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/node_modules/highlight.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -72,12 +73,22 @@ export default {
   modules: ['@nuxtjs/markdownit', 'nuxt-purgecss'],
   markdownit: {
     breaks: false, 
-    injected: true
+    injected: true,
+//    highlight: function(str, lang) {
+//      if (lang && hljs.getLanguage(lang)) {
+//        try {
+//         return hljs.highlight(lang, str).value
+//          } catch (__) {}
+//          return '' // use external default escaping
+//       }
+//     }
   },
   /*
    ** Build configuration
    */
   build: {
+    // You can extend webpack config here
+    transpile: ['highlight.js'],
     extractCSS: true,
     postcss: {
       plugins: {
@@ -106,11 +117,11 @@ export default {
   },
   purgeCSS: {
     mode: 'postcss',
-    whitelist: ['dark-mode', 'light-mode', 'btn', 'icon', 'main'],
-    whitelistPatterns: [/^article/, /image$/]
+    whitelist: ['hljs-function', 'dark-mode', 'light-mode', 'btn', 'icon', 'main'],
+    whitelistPatterns: [/^article/, /image$/, /hljs/]
   },
   colorMode: {
-    preference: 'system', // default value of $colorMode.preference
+    preference: 'light', // default value of $colorMode.preference
     fallback: COLOR_MODE_FALLBACK, // fallback value if not system preference found
     componentName: 'ColorScheme',
     cookie: {

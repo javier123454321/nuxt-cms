@@ -16,6 +16,9 @@
   "license": "MIT",
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.6",
+    "highlight.js": "^10.7.1",
+    "markdown-it": "^8.4.2",
+    "markdown-it-highlightjs": "^3.4.0",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {

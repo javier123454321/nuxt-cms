@@ -18,8 +18,8 @@
       </p>
     </div>
     <div
-      v-html="$md.render(blogPost.body)"
-      class="p-12 text-left bg-gray-200 shadow-lgOrange markdownArea"
+      v-html="blogPost.body"
+      class="p-12 text-left bg-gray-100 shadow-lgOrange markdownArea"
     />
     <div class="flex justify-between mt-8">
       <button
@@ -38,20 +38,44 @@
 <script>
 import StyledHighlightedTitle from "~/components/style/StyledHighlightedTitle.vue";
 import StyledSectionWidth from "~/components/style/StyledSectionWidth.vue";
+import hljs from "highlight.js";
+import MarkdownIt from "markdown-it";
 export default {
   components: { StyledHighlightedTitle, StyledSectionWidth },
   async asyncData({ params, payload }) {
     if (payload) return { blogPost: payload };
-    else
-      return {
-        blogPost: await require(`~/assets/content/blog/${params.blog}.json`),
-      };
+    else{
+      const blogPost = await require(`~/assets/content/blog/${params.blog}.json`);
+      let md = new MarkdownIt({
+        breaks: false, 
+        injected: true,
+        highlight: function(str, lang){
+          if (lang && hljs.getLanguage(lang)) {
+            try {
+             return hljs.highlight(str, {language: lang}).value
+              } catch (__) {}
+              return '' // use external default escaping
+           }
+         }
+
+        })
+      blogPost.body = md.render(blogPost.body)
+      return {blogPost};
+    };
   },
   methods: {
     formatDate(dateString) {
       const date = new Date(dateString);
       return date.toLocaleDateString(process.env.lang) || "";
     },
+    highlightCode(str, lang){
+          if (lang && hljs.getLanguage(lang)) {
+            try {
+             return hljs.highlight(lang, str).value
+              } catch (__) {}
+              return '' // use external default escaping
+           }
+         }
   },
   computed: {
     allPosts() {
@@ -67,6 +91,12 @@ export default {
 }
 .markdownArea blockquote {
   @apply pl-6 py-4 border-l-4 border-solid border-blue-400 bg-blue-200;
+}
+.markdownArea pre{
+  @apply overflow-x-auto overflow-auto p-2 bg-bg-dark text-pink-200;
+}
+.markdownArea code{
+  @apply overflow-auto;
 }
 .markdownArea > h2,
 .markdownArea > h3,
@@ -88,4 +118,19 @@ export default {
 .markdownArea h6{
   @apply text-lg;
 }
+.hljs-title, 
+.hljs-keyword, 
+.hljs-params{
+  @apply font-bold text-hotPink;
+}
+.hljs-keyword{
+  @apply text-orange-400;
+  }
+.hljs-params{
+  @apply text-blue-400;
+}
+.hljs-built_in{
+  @apply text-yellow-200;
+  }
+
 </style>
