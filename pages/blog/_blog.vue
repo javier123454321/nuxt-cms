@@ -18,7 +18,7 @@
       </p>
     </div>
     <div
-      v-html="blogPost.body"
+      v-html="renderedContent"
       class="p-12 text-left bg-gray-100 shadow-lgOrange markdownArea"
     />
     <div class="flex justify-between mt-8">
@@ -36,53 +36,56 @@
   </StyledSectionWidth>
 </template>
 <script>
-import StyledHighlightedTitle from "~/components/style/StyledHighlightedTitle.vue";
-import StyledSectionWidth from "~/components/style/StyledSectionWidth.vue";
-import hljs from "highlight.js";
-import MarkdownIt from "markdown-it";
-export default {
-  components: { StyledHighlightedTitle, StyledSectionWidth },
-  async asyncData({ params, payload }) {
-    if (payload) return { blogPost: payload };
-    else{
-      const blogPost = await require(`~/assets/content/blog/${params.blog}.json`);
-      let md = new MarkdownIt({
+  import StyledHighlightedTitle from "~/components/style/StyledHighlightedTitle.vue";
+  import StyledSectionWidth from "~/components/style/StyledSectionWidth.vue";
+  import Prism from "prismjs";
+  import MarkdownIt from "markdown-it";
+  export default {
+    components: { StyledHighlightedTitle, StyledSectionWidth },
+    async asyncData({ params, payload }) {
+      if (payload) return { blogPost: payload };
+      else{
+        const blogPost = await require(`~/assets/content/blog/${params.blog}.json`);
+        return {blogPost};
+      };
+    },
+    methods: {
+      formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleDateString(process.env.lang) || "";
+      },
+      highlightCode(str, lang){
+        if (lang && hljs.getLanguage(lang)) {
+          try {
+            return hljs.highlight(lang, str).value
+          } catch (__) {}
+          return '' // use external default escaping
+        }
+      }
+    },
+    computed: {
+      allPosts() {
+        return this.$store.state.blogPosts;
+      },
+      renderedContent(){
+        let md = new MarkdownIt({
         breaks: false, 
         injected: true,
         highlight: function(str, lang){
-          if (lang && hljs.getLanguage(lang)) {
-            try {
-             return hljs.highlight(str, {language: lang}).value
-              } catch (__) {}
-              return '' // use external default escaping
-           }
-         }
+          try {
+            //return hljs.highlight(str, {language: lang}).value
+            return '<pre class="line-numbers"><code>' +
+                      Prism.highlight(str, Prism.languages[lang], lang) +
+                   '</code></pre>';
 
+          } catch (__) {}
+            return '' // use external default escaping
+          }
         })
-      blogPost.body = md.render(blogPost.body)
-      return {blogPost};
-    };
-  },
-  methods: {
-    formatDate(dateString) {
-      const date = new Date(dateString);
-      return date.toLocaleDateString(process.env.lang) || "";
+        return md.render(this.blogPost.body)
+       }
     },
-    highlightCode(str, lang){
-          if (lang && hljs.getLanguage(lang)) {
-            try {
-             return hljs.highlight(lang, str).value
-              } catch (__) {}
-              return '' // use external default escaping
-           }
-         }
-  },
-  computed: {
-    allPosts() {
-      return this.$store.state.blogPosts;
-    },
-  },
-};
+  };
 </script>
 <style lang="css">
 .markdownArea > p {
@@ -90,10 +93,10 @@ export default {
   line-height: 1.6;
 }
 .markdownArea blockquote {
-  @apply pl-6 py-4 border-l-4 border-solid border-blue-400 bg-blue-200;
+  @apply pl-6 py-4 border-l-4 border-solid border-blue-400 bg-blue-100 mb-4;
 }
 .markdownArea pre{
-  @apply overflow-x-auto overflow-auto p-2 bg-bg-dark text-pink-200;
+  @apply overflow-x-auto shadow-mdPurple overflow-auto p-1 bg-bg-dark text-pink-200 mb-6;
 }
 .markdownArea code{
   @apply overflow-auto;
@@ -118,19 +121,22 @@ export default {
 .markdownArea h6{
   @apply text-lg;
 }
-.hljs-title, 
-.hljs-keyword, 
-.hljs-params{
-  @apply font-bold text-hotPink;
+.token.string, 
+.token.keyword, 
+.token.params{
+  @apply text-hotPink;
 }
-.hljs-keyword{
+.token.keyword{
   @apply text-orange-400;
   }
-.hljs-params{
+.token.params{
   @apply text-blue-400;
 }
-.hljs-built_in{
+.token.function{
   @apply text-yellow-200;
+  }
+.token.comment{
+  @apply text-blue-400 bg-gray-800;
   }
 
 </style>

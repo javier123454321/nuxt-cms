@@ -18,7 +18,7 @@
         />
         <img
           src="/img/me.png"
-          class="absolute md:block h-700 ml-24 md:z-10 transform -translate-x-32 md:-translate-x-40 md+:-translate-x-24 left-0 lg:h-600 lg+:h-800 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
+          class="absolute md:block h-650 ml-24 md:z-10 transform -translate-x-32 md:-translate-x-40 md+:-translate-x-24 left-0 lg:h-550 lg+:h-750 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
           alt="me with a dog"
         />
         <div class="w-full z-0">
@@ -29,9 +29,9 @@
               class="text-center md:text-left z-20 relative block font-mono text-4xl lg:text-5xl font-black 2xl:text-6xl 2xl:ml-64"
             >
               Javier Gonzalez <br />
-              <span class="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl"
-                >Software Developer</span
-              >
+              <span class="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl">
+                Software Developer
+              </span>
             </h1>
           </div>
           <div class="z-10 flex justify-center md:justify-end font-mono">

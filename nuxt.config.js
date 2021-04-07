@@ -62,7 +62,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/node_modules/highlight.js'],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
@@ -70,19 +70,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/markdownit', 'nuxt-purgecss'],
-  markdownit: {
-    breaks: false, 
-    injected: true,
-//    highlight: function(str, lang) {
-//      if (lang && hljs.getLanguage(lang)) {
-//        try {
-//         return hljs.highlight(lang, str).value
-//          } catch (__) {}
-//          return '' // use external default escaping
-//       }
-//     }
-  },
+  modules: ['nuxt-purgecss'],
   /*
    ** Build configuration
    */

@@ -101,6 +101,8 @@ module.exports = {
       // ...defaultTheme.boxShadow,
       mdOrange: '5px 5px 0px #EDAB00',
       lgOrange: '15px 15px 0px #EDAB00',
+      mdPurple: '5px 5px 0px #6227b1',
+      lgPurple: '15px 15px 0px #6227b1',
       mdBlack: '5px 5px 0px #040404',
       lgBlack: '15px 15px 0px #040404;',
     },
