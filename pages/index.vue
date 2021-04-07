@@ -1,24 +1,24 @@
 <template>
   <div>
-    <StyledSectionWidth class="z-30 relative pt-12 overflow-visible mt-48">
+    <StyledSectionWidth class="z-30 relative pt-12 overflow-visible mt-48 mb-24">
       <div
         class="overflow-x-hidden min-w-1000 absolute z-0 top-0 transform -translate-y-56"
       >
         <img
           src="/img/bg-blue-splat.png"
-          class="h-800 xl:h-1000 object-cover object-center"
+          class="h-800 pointer-events-none xl:h-1000 object-cover object-center"
           alt=""
         />
       </div>
       <div class="flex flex-row items-center justify-center md:justify-end">
         <img
           src="/img/Chicago.png"
-          class="absolute h-700 md:h-700 lg:h-850 ml-24 transform -translate-y-24 object-cover object-center"
+          class="absolute pointer-events-none h-700 md:h-700 lg:h-850 ml-24 transform -translate-y-24 object-cover object-center"
           alt="me with a "
         />
         <img
           src="/img/me.png"
-          class="absolute md:block h-650 ml-24 md:z-10 transform -translate-x-32 md:-translate-x-40 md+:-translate-x-24 left-0 lg:h-550 lg+:h-750 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
+          class="absolute pointer-events-none md:block h-650 ml-24 md:z-10 transform -translate-x-32 md:-translate-x-40 md+:-translate-x-24 left-0 lg:h-550 lg+:h-750 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
           alt="me with a dog"
         />
         <div class="w-full z-0">
@@ -65,15 +65,17 @@
     <img
       id="brush-splash"
       src="/img/bg-brush-red.png"
-      class="absolute right-0 z-0 min-w-1000 md:w-11/12 overflow-visible transform translate-y-10 lg:-translate-y-20 pointer-events-none"
+      class="absolute right-0 z-0 min-w-1000 md:w-11/12 overflow-visible transform -translate-y-10 lg:-translate-y-20 pointer-events-none"
     />
     <StyledSectionWidth id="about" class="mt-24 lg:mt-48">
       <div
-        class="w-10/12 lg:px-0 py-12 mx-auto mt-0 md:mt-16 relative transform -rotate-12"
+        class="w-10/12 lg:px-0 py-12 mx-auto mt-40 z-50 relative transform -rotate-12"
       >
-        <h2 class="font-mono text-6xl font-black">Hi There,</h2>
+        <h2 class="font-mono font-black text-4xl md:text-6xl xl:pb-6">
+          Hi There,
+        </h2>
         <p
-          class="font-mono text-2xl md:text-3xl lg:text-4xl font-black text-right"
+          class="font-mono text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-right"
         >
           I am an ex architecural desiger turned software developer interested
           in the medium of the web and it’s ability to express old ideas in a
@@ -81,7 +83,7 @@
         </p>
         <br />
         <p
-          class="font-mono text-2xl md:text-3xl lg:text-4xl font-black text-right"
+          class="font-mono text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-right"
         >
           I love learning and making things, both physical and virtual.
         </p>
