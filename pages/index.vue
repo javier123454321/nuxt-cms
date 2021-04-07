@@ -37,26 +37,26 @@
           <div class="z-10 flex justify-center md:justify-end font-mono">
             <StyledButton
               href="https://github.com/javier123454321/"
-              class="mr-5 md+:mr-10"
+              class="mr-3 md:mr-5"
               element="a"
             >
-              <span class="hidden sm:block"> Github </span>
-              <img alt="github" src="/img/github.svg" class="sm:hidden" />
+              <span class="hidden md+:block"> Github </span>
+              <img alt="github" src="/img/github.svg" class="md+:hidden" />
             </StyledButton>
             <StyledButton
               href="https://linkedin.com/in/javier123454321"
-              class="mr-5 md+:mr-10"
+              class="mr-3 md:mr-5"
               element="a"
             >
-              <span class="hidden sm:block"> Linkedin </span>
-              <img alt="linkedin" src="/img/linkedin.svg" class="sm:hidden" />
+              <span class="hidden md+:block"> Linkedin </span>
+              <img alt="linkedin" src="/img/linkedin.svg" class="md+:hidden" />
             </StyledButton>
             <StyledButton
               href="https://twitter.com/javier123454321"
               element="a"
             >
-              <span class="hidden sm:block"> Twitter </span>
-              <img alt="twitter" src="/img/twitter.svg" class="sm:hidden" />
+              <span class="hidden md+:block"> Twitter </span>
+              <img alt="twitter" src="/img/twitter.svg" class="md+:hidden" />
             </StyledButton>
           </div>
         </div>

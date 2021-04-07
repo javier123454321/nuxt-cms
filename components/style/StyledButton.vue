@@ -1,7 +1,7 @@
 <template>
   <component
     :is="element"
-    class="px-8 lg:px-12 py-4 text-xl font-black bg-gray-300 md+:w-42 shadow-mdOrange"
+    class="px-8 md: px-12 lg:px-12 py-4 text-xl font-black bg-gray-300 md+:w-42 shadow-mdOrange"
   >
       <slot></slot>
   </component>
