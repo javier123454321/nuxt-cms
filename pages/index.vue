@@ -18,7 +18,12 @@
         />
         <img
           src="/img/me.png"
-          class="absolute pointer-events-none md:block h-650 ml-24 md:z-10 transform -translate-x-32 md:-translate-x-40 md+:-translate-x-24 left-0 lg:h-550 lg+:h-750 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
+          class="hidden absolute pointer-events-none md:block h-650 ml-24 md:z-10 transform -translate-x-32 md:-translate-x-40 md+:-translate-x-24 left-0 lg:h-550 lg+:h-750 xl:translate-x-0 xl:ml-96 xl:min-w-xs"
+          alt="me with a dog"
+        />
+        <img
+          src="/img/me_face.png"
+          class="absolute pointer-events-none md:hidden ml-24 transform  -translate-y-32 -translate-y-60"
           alt="me with a dog"
         />
         <div class="w-full z-0">
@@ -37,26 +42,27 @@
           <div class="z-10 flex justify-center md:justify-end font-mono">
             <StyledButton
               href="https://github.com/javier123454321/"
-              class="mr-3 md:mr-5"
+              class="text-center px-8 py-4 md:px-12 lg:w-48 mr-3 md:mr-5"
               element="a"
             >
-              <span class="hidden md+:block"> Github </span>
-              <img alt="github" src="/img/github.svg" class="md+:hidden" />
+              <span class="hidden lg:block"> Github </span>
+              <img alt="github" src="/img/github.svg" class="lg:hidden mx-auto" />
             </StyledButton>
             <StyledButton
               href="https://linkedin.com/in/javier123454321"
-              class="mr-3 md:mr-5"
+              class="text-center px-8 py-4 md:px-12 lg:w-48 mr-3 md:mr-5"
               element="a"
             >
-              <span class="hidden md+:block"> Linkedin </span>
-              <img alt="linkedin" src="/img/linkedin.svg" class="md+:hidden" />
+              <span class="hidden lg:block"> Linkedin </span>
+              <img alt="linkedin" src="/img/linkedin.svg" class="lg:hidden mx-auto" />
             </StyledButton>
             <StyledButton
               href="https://twitter.com/javier123454321"
               element="a"
+              class="text-center px-8 py-4 md:px-12 lg:w-48"
             >
-              <span class="hidden md+:block"> Twitter </span>
-              <img alt="twitter" src="/img/twitter.svg" class="md+:hidden" />
+              <span class="hidden lg:block"> Twitter </span>
+              <img alt="twitter" src="/img/twitter.svg" class="lg:hidden mx-auto" />
             </StyledButton>
           </div>
         </div>
@@ -101,21 +107,22 @@
       <div
         v-for="post in featuredPosts"
         :key="post.slug"
-        class="flex items-center px-12 py-8 mx-2 text-xl font-black text-left bg-gray-300 dark:bg-yellow-800 shadow-lgOrange"
+        >
+        <article 
+        class="items-center px-12 py-8 mx-2 text-xl font-black text-left bg-purple-300 dark:bg-yellow-800 shadow-lgPurple"
       >
-        <div class="mr-10 bg-green-100 blog__imageContainer"></div>
-        <article>
+          <h4 v-text="post.title" class="font-mono font-black mb-4 text-3xl"></h4>
           <div
-            class="mb-12 font-mono text-xl font-black"
+            class="my-8 font-mono text-xl font-black"
             v-html="post.description"
           >
-            <br />
           </div>
-          <nuxt-link
-            :to="`blog/${post.slug}`"
-            class="box-content px-12 py-4 my-24 font-mono text-xl font-black bg-gray-200 content-border shadow-mdOrange"
-            >Full Post</nuxt-link
-          >
+          <nuxt-link :to="`blog/${post.slug}`">
+            <div 
+              class="px-8 py-4 font-mono text-xl font-black bg-purple-200 w-48 text-center shadow-mdPurple">
+              Full Post
+            </div>
+          </nuxt-link>
         </article>
       </div>
       <div class="mt-12">
@@ -153,11 +160,13 @@
             v-html="project.title"
           ></div>
           <img :src="project.gallery[0]" alt="" srcset="" />
-          <div class="my-8 mb-4 text-center">
+          <div class="my-8 mb-4">
             <nuxt-link
-              class="px-4 py-2 text-xl font-black bg-gray-300 shadow-mdOrange"
               :to="`projects/${project.slug}`"
-              >See Project
+              >
+              <StyledButton>
+              See Project
+              </StyledButton>
             </nuxt-link>
           </div>
         </div>
