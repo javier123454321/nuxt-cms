@@ -1,7 +1,21 @@
 <template>
   <div class="w-full flex justify-end xl:justify-center">
     <nav
-      class="fixed sm:top-auto z-50 flex justify-end px-0 md:w-screen font-mono md:px-12 lg:px-24 xl:px-48 max-w-screen-2xl mx-auto"
+      class="
+        fixed
+        sm:top-auto
+        z-50
+        flex
+        justify-end
+        px-0
+        md:w-screen
+        font-mono
+        md:px-12
+        lg:px-24
+        xl:px-48
+        max-w-screen-2xl
+        mx-auto
+      "
     >
       <ul class="flex flex-col sm:flex-row justify-end">
         <li class="sm:hidden mr-2 mb-2">
@@ -49,7 +63,16 @@
           <li class="flex-1 mr-2 mb-2">
             <nuxt-link to="/">
               <div
-                class="sm:w-40 text-center py-4 md:mr-10 text-xl font-black bg-gray-300 shadow-mdOrange"
+                class="
+                  sm:w-40
+                  text-center
+                  py-4
+                  md:mr-10
+                  text-xl
+                  font-black
+                  bg-gray-300
+                  shadow-mdOrange
+                "
               >
                 Home
               </div>
@@ -58,7 +81,17 @@
           <li class="flex-1 mr-2 mb-2">
             <nuxt-link to="/blog">
               <div
-                class="w-40 text-center py-4 md:mr-10 text-xl font-black bg-gray-300 shadow-mdOrange hover:bg-yellow-400"
+                class="
+                  w-40
+                  text-center
+                  py-4
+                  md:mr-10
+                  text-xl
+                  font-black
+                  bg-gray-300
+                  shadow-mdOrange
+                  hover:bg-yellow-400
+                "
               >
                 Blog
               </div>
@@ -67,7 +100,15 @@
           <li class="flex-1">
             <nuxt-link to="/projects">
               <div
-                class="w-40 py-4 text-xl text-center font-black bg-gray-300 shadow-mdOrange hover:bg-yellow-400"
+                class="
+                  w-40
+                  py-4
+                  text-xl text-center
+                  font-black
+                  bg-gray-300
+                  shadow-mdOrange
+                  hover:bg-yellow-400
+                "
               >
                 Projects
               </div></nuxt-link
@@ -91,7 +132,7 @@ export default {
   methods: {
     setWindowSize() {
       console.log(document.documentElement.clientWidth);
-      this.isDesktop = window.document.documentElement.clientWidth > 625;
+      this.isDesktop = window.document.documentElement.clientWidth > 640;
     },
   },
   mounted() {
