@@ -120,6 +120,7 @@ export default {
 .markdownArea > p {
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  font-size: 1.2rem;
 }
 .markdownArea blockquote {
   @apply pl-6 py-4 border-l-4 border-solid border-blue-400 bg-blue-100 mb-4;
