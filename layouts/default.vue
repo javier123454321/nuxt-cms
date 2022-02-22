@@ -20,6 +20,7 @@ export default {
 <style lang="postcss">
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 #__layout {
   margin: 0;

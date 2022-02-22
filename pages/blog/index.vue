@@ -1,6 +1,5 @@
 <template>
   <main v-if="blogPosts" class="main">
-
     <StyledSectionWidth id="featured-post" class="relative z-10">
       <div class="mt-24 mb-12">
         <h1 class="text-left font-black absolute z-10 mb-0 font-mono text-4xl font-black text-left">
@@ -81,21 +80,6 @@
             </div>
           </nuxt-link>
         </article>
-      </div>
-      <div class="mt-12">
-        <nuxt-link
-          :to="`blog`"
-          class="
-            px-12
-            py-4
-            font-mono
-            text-xl
-            font-black
-            bg-gray-300
-            shadow-mdOrange
-          "
-          >All Posts</nuxt-link
-        >
       </div>
     </StyledSectionWidth>
   </main>

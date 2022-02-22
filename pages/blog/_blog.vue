@@ -13,7 +13,6 @@
         object-cover object-center
         z-0
       "
-      alt="me with a "
     />
     <StyledSectionWidth
       element="article"
@@ -60,6 +59,20 @@
       </button> -->
       </div>
     </StyledSectionWidth>
+    <img
+      src="/img/bg-purp-splat.png"
+      class="
+        absolute
+        pointer-events-none
+        md:h-700
+        lg:h-850
+        transform
+        -translate-y-full
+        translate-x-1/2
+        object-cover object-center
+        z-0
+      "
+    />
   </div>
 </template>
 <script>
