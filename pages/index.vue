@@ -53,9 +53,7 @@
             left-0
             lg:h-550
             lg+:h-750
-            xl:translate-x-0
-            xl:ml-96
-            xl:min-w-xs
+            xl:translate-x-0 xl:ml-96 xl:min-w-xs
           "
           alt="me with a dog"
         />
@@ -103,8 +101,7 @@
                 text-4xl
                 lg:text-5xl
                 font-black
-                2xl:text-6xl
-                2xl:ml-64
+                2xl:text-6xl 2xl:ml-64
               "
             >
               Javier Gonzalez <br />
@@ -383,7 +380,7 @@ export default {
   },
 };
 </script>
-<style lang="css" scoped>
+<style lang="postcss" scoped>
 #hero {
   background-image: url("/img/bg-blue-splat.png");
   background-repeat: no-repeat;

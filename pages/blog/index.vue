@@ -2,8 +2,8 @@
   <main v-if="blogPosts" class="main">
     <StyledSectionWidth id="featured-post" class="relative z-10">
       <div class="mt-24 mb-12">
-        <h1 class="text-left font-black absolute z-10 mb-0 font-mono text-4xl font-black text-left">
-        Blog Posts
+        <h1 class="text-left font-black absolute z-10 mb-0 font-mono text-4xl">
+          Blog Posts
         </h1>
         <div
           class="
@@ -17,43 +17,52 @@
           "
         ></div>
       </div>
-    <ul v-for="(blogPost, index) in blogPosts" :key="index" 
-      class="
-        items-center
-        px-12
-        py-8
-        mb-12
-        text-xl
-        font-black
-        text-left
-        bg-gray-200
-        shadow-lgOrange
+      <ul
+        v-for="(blogPost, index) in blogPosts"
+        :key="index"
+        class="
+          items-center
+          px-12
+          py-8
+          mb-12
+          text-xl
+          font-black
+          text-left
+          bg-gray-200
+          shadow-lgOrange
         "
       >
-      <nuxt-link :to="`blog/${blogPost.slug}`">
-        <div 
-          class="flex justify-between"
-          >
-          <div>
-            <h3 class="font-black text-2xl">{{ blogPost.title }}</h3>
-            <div class="mt-4 mb-2">
-              <p class="inline">{{ blogPost.description }}</p>
+        <nuxt-link :to="`blog/${blogPost.slug}`">
+          <div class="flex justify-between">
+            <div>
+              <h3 class="font-black text-2xl">{{ blogPost.title }}</h3>
+              <div class="mt-4 mb-2">
+                <p class="inline">{{ blogPost.description }}</p>
+              </div>
+            </div>
+            <div>
+              <h6
+                v-if="blogPost.date"
+                class="
+                  inline-block
+                  px-2
+                  py-1
+                  font-medium
+                  text-white
+                  whitespace-no-wrap
+                  rounded-sm
+                  bg-accent
+                  dark:bg-accent
+                "
+              >
+                {{ formatDate(blogPost.date) }}
+              </h6>
             </div>
           </div>
-          <div>
-            <h6
-              v-if="blogPost.date"
-              class="inline-block px-2 py-1 font-medium text-white whitespace-no-wrap rounded-sm bg-accent dark:bg-accent"
-            >
-              {{ formatDate(blogPost.date) }}
-            </h6>
-          </div>
-        </div>
-      </nuxt-link>
-    </ul>
+        </nuxt-link>
+      </ul>
       <div v-for="post in featuredPosts" :key="post.slug">
-        <article
-        >
+        <article>
           <h4
             v-text="post.title"
             class="font-mono font-black mb-4 text-3xl"

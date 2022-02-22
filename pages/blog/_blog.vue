@@ -129,7 +129,7 @@ export default {
   },
 };
 </script>
-<style lang="css">
+<style lang="postcss">
 .markdownArea > p {
   margin-bottom: 1.5rem;
   line-height: 1.6;

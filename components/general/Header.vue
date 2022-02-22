@@ -1,6 +1,7 @@
 <template>
   <div class="w-full flex justify-end xl:justify-center">
-    <nav v-show="!isProjectModal"
+    <nav
+      v-show="!isProjectModal"
       class="
         fixed
         sm:top-auto
@@ -128,7 +129,7 @@ export default {
     return {
       expanded: false,
       isDesktop: false,
-			isProjectModal: false
+      isProjectModal: false,
     };
   },
   methods: {
@@ -139,21 +140,21 @@ export default {
   },
   mounted() {
     this.setWindowSize();
-		this.isProjectModal = this.$route.name === "projects-project"
+    this.isProjectModal = this.$route.name === "projects-project";
     window.addEventListener("resize", this.setWindowSize);
-    window.onNuxtReady(() => { 
-      console.log(window.$nuxt.$router)
-    })
+    window.onNuxtReady(() => {
+      console.log(window.$nuxt.$router);
+    });
   },
   watch: {
     $route(to, from) {
-			this.isProjectModal = this.$route.name === "projects-project"
-    }
+      this.isProjectModal = this.$route.name === "projects-project";
+    },
   },
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="postcss" scoped>
 :root {
   --icon-width: 18px;
 }

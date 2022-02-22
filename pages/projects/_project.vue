@@ -7,13 +7,13 @@
             {{ projectPost.title }}
           </h1>
         </div>
-      <div
-        v-html="renderedContent"
-        class="mt-20 relative z-10 text-left markdownArea"
-      />
-      <div v-for="gallery in projectPost.gallery">
-        <img :src="gallery">
-      </div>
+        <div
+          v-html="renderedContent"
+          class="mt-20 relative z-10 text-left markdownArea"
+        />
+        <div v-for="(gallery, i) in projectPost.gallery" :key="i">
+          <img :src="gallery" />
+        </div>
       </StyledSectionWidth>
     </div>
   </div>
@@ -26,11 +26,12 @@ import MarkdownIt from "markdown-it";
 export default {
   components: { StyledHighlightedTitle, StyledSectionWidth },
   async asyncData({ params, payload }) {
-    if (payload) return { projectPost: payload }
+    if (payload) return { projectPost: payload };
     else
       return {
-        projectPost: await require(`~/assets/content/projects/${params.project}.json`)
-      }
+        projectPost:
+          await require(`~/assets/content/projects/${params.project}.json`),
+      };
   },
   computed: {
     renderedContent() {
@@ -51,10 +52,10 @@ export default {
       });
       return md.render(this.projectPost.body);
     },
-  }
-}
+  },
+};
 </script>
-<style lang="css">
+<style lang="postcss">
 .markdownArea > p {
   margin-bottom: 1.5rem;
   line-height: 1.6;

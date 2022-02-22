@@ -8,7 +8,16 @@
       <slot></slot>
     </span>
     <span
-      class="absolute left-0 bg-blue-400 w-full h-50 transform translate-y-5 -rotate-3"
+      class="
+        absolute
+        left-0
+        bg-blue-400
+        w-full
+        h-50
+        transform
+        translate-y-5
+        -rotate-3
+      "
     ></span>
   </component>
 </template>
